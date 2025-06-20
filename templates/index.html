@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chest X-ray Pneumonia Detector</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light text-center p-5">
+    <div class="container">
+        <h1 class="mb-4 text-primary">Pneumonia Detection from Chest X-ray</h1>
+
+        <form action="/predict" method="POST" enctype="multipart/form-data" class="border p-4 rounded shadow bg-white mx-auto" style="max-width: 500px;">
+            <div class="mb-3">
+                <input class="form-control" type="file" name="image" accept="image/*" required>
+            </div>
+            <button class="btn btn-primary w-100" type="submit">Get Diagnosis</button>
+        </form>
+
+        {% if prediction %}
+            <div class="alert alert-info mt-4 mx-auto" style="max-width: 500px;">
+                <h4>Prediction: {{ prediction }}</h4>
+                <p>Confidence: {{ confidence }}</p>
+            </div>
+        {% endif %}
+
+        <footer class="mt-5 text-muted">
+            <small>Built with Flask & TensorFlow | © 2025</small>
+        </footer>
+    </div>
+</body>
+</html>
