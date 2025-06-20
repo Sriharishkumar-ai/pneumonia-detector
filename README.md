@@ -16,12 +16,6 @@ This short video shows how to:
 
 
 
-## 📸 Screenshot
-
-![Web Screenshot](./demo/screenshot.png)
-
-
-
 ## 🚀 Features
 
 - Upload `.jpeg` chest X-ray images
